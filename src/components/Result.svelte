@@ -1,4 +1,3 @@
-<!-- TODO Rien à faire, on a ajouté ce composant -->
 <script>
 	import {historyTotal, total } from "../stores.js";
 </script>

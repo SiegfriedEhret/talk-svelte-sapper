@@ -42,11 +42,11 @@ function createHistory() {
 
 export const history = createHistory();
 
-// TODO Rien à faire, mais on ajoute ça pour afficher le dernier `total`
 export const historyTotal = derived(history, $history => {
 	const [last = { total: 0 }] = $history;
 	return last.total;
 });
 
-// TODO Ajouter un store isValid derived de total et historyTotal qui renvoie si les valeurs sont égales (value absolue FTW)
-export const isValid = false;
+export const isValid = derived([total, historyTotal], ([$total, $historyTotal]) => {
+	return $total === Math.abs($historyTotal);
+})

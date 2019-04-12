@@ -1,8 +1,8 @@
 <script>
-	// TODO On importe Result.svelte
+	// TODO On importe Graph.svelte
+	import Graph from '../components/Graph.svelte';
 	import Result from '../components/Result.svelte';
 	import Table from '../components/Table.svelte';
-	// TODO On importe isValid des stores
 	import { history, isValid } from '../stores';
 
 	async function getData() {
@@ -23,10 +23,19 @@
 	getData();
 </script>
 
-<!-- TODO Si c'est valide, mettre un bord vers au body, sinon rouge -->
+{#if $isValid}
 <style>
-
+	body {
+		border: 5px solid green;
+	}
 </style>
+{:else}
+<style>
+	body {
+		border: 5px solid red;
+	}
+</style>
+{/if}
 
 <svelte:head>
 	<title>Sapper project template</title>
@@ -35,6 +44,7 @@
 {#await getData()}
 	<p>...waiting</p>
 {:then data}
+	<!-- TODO Ajouter Graph -->
 	<Table />
 {:catch error}
 	<p style="color: red">{error.message}</p>
