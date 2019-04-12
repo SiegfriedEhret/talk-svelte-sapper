@@ -1,5 +1,7 @@
 <script>
 	import Line from './Line.svelte';
+
+	// TODO on peut enlever la valeur pour mettre [] (valeur par défaut)
 	export let data = [
 	  {
 	    "amount": -10,
@@ -23,6 +25,7 @@
 		<th>Siegfried</th>
 		<th>Total</th>
 	</tr>
-
-	<!-- TODO Boucle avec {#each} sur les data pour les lignes -->
+	{#each data as item (item.id)}
+		<Line {item} />
+	{/each}
 </table>

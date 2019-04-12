@@ -26,9 +26,13 @@
 	</td>
 
 	{#each whoz as whozItem}
-
-		<!-- TODO Bloc if si le who est un whozItem alors <td class={plusminus}>{amount}</td> sinon <td></td> -->
-
+		{#if who === whozItem}
+			<td class={plusminus}>
+				{amount}
+			</td>
+		{:else}
+			<td></td>
+		{/if}
 	{/each}
 
 	<td>{total}</td>
