@@ -1,5 +1,4 @@
 <script>
-	// TODO On importe Graph.svelte
 	import Graph from '../components/Graph.svelte';
 	import Result from '../components/Result.svelte';
 	import Table from '../components/Table.svelte';
@@ -44,7 +43,10 @@
 {#await getData()}
 	<p>...waiting</p>
 {:then data}
-	<!-- TODO Ajouter Graph -->
+    <Result />
+
+    <Graph />
+
 	<Table />
 {:catch error}
 	<p style="color: red">{error.message}</p>

@@ -34,7 +34,6 @@
 	role="img"
 >
 	{#each getValues($history) as item, i (item.name)}
-		<!-- TODO On peut spread un objet pour faire des props -->
 		<GraphBar {...item} {i} />
 	{/each}
 </svg>

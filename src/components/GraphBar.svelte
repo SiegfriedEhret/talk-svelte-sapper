@@ -1,4 +1,3 @@
-<!-- TODO Namespace ! Svelte peut / pourra compiler vers plusieurs cibles ! -->
 <svelte:options namespace="svg" />
 
 <script>
