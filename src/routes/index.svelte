@@ -36,6 +36,7 @@
 	<title>Sapper project template</title>
 </svelte:head>
 
+<!-- TODO Faire le ménage et regarder la console -->
 <h1>Great success!</h1>
 
 <figure>

@@ -12,7 +12,13 @@
 	$: isValid = Object.values(item).every(x => !!x);
 
 	function handleSubmit() {
-		console.log(item);
+		fetch('/data.json', {
+			method: 'POST',
+			headers: {
+	            "Content-Type": "application/json"
+	        },
+	        body: JSON.stringify({...item, amount: item.plusminus === 'minus' ? -item.amount : item.amount})
+		})
 	}
 </script>
 
