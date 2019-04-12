@@ -1,19 +1,6 @@
 <script>
 	import Line from './Line.svelte';
-
-	// TODO on peut enlever la valeur pour mettre [] (valeur par défaut)
-	export let data = [
-	  {
-	    "amount": -10,
-	    "plusminus": "minus",
-	    "when": "2019-04-12",
-	    "what": "Manger",
-	    "who": "both",
-	    "id": "71c7449a-39b6-4b0f-b4db-c5ac891f6d80",
-	    "createdAt": 1555083480853,
-	    "updatedAt": 1555083480853
-	  }
-	]
+	export let data = []
 </script>
 
 <table>
