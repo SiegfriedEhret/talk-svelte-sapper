@@ -51,7 +51,7 @@
 <nav>
 	<ul>
 		<li><a class='{segment === undefined ? "selected" : ""}' href='.'>home</a></li>
-        <!-- TODO: ajouter la page 'add' -->
+        <li><a class='{segment === "add" ? "selected" : ""}' href='add'>add</a></li>
         <li><a class='{segment === "about" ? "selected" : ""}' href='about'>about</a></li>
 
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
