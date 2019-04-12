@@ -16,7 +16,6 @@ export const total = derived(coins, $coins =>
 	Object.entries($coins).reduce((acc, [key, value]) => acc + key * value, 0)
 );
 
-// TODO C'est le bronx donc juste expliquer le coup du store custom.
 function createHistory() {
 	const { subscribe, set, update } = writable([]);
 
@@ -42,3 +41,12 @@ function createHistory() {
 }
 
 export const history = createHistory();
+
+// TODO Rien à faire, mais on ajoute ça pour afficher le dernier `total`
+export const historyTotal = derived(history, $history => {
+	const [last = { total: 0 }] = $history;
+	return last.total;
+});
+
+// TODO Ajouter un store isValid derived de total et historyTotal qui renvoie si les valeurs sont égales (value absolue FTW)
+export const isValid = false;
