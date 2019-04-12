@@ -22,6 +22,21 @@
 	getData();
 </script>
 
+<style>
+	.app {
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-columns: 20rem 1fr;
+		margin: 1rem;
+	}
+
+	aside {
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-columns: 1fr;
+	}
+</style>
+
 {#if $isValid}
 <style>
 	body {
@@ -43,11 +58,23 @@
 {#await getData()}
 	<p>...waiting</p>
 {:then data}
-    <Result />
+    <div class="app">
+    	<aside>
+    		<h2 class="title is-2">Résultat</h2>
 
-    <Graph />
+    		<Result/>
 
-	<Table />
+    		<h2 class="title is-2">Répartition</h2>
+
+    		<Graph />
+    	</aside>
+
+    	<section class="history">
+    		<h2 class="title is-2">Historique</h2>
+
+    		<Table />
+    	</section>
+    </div>
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}
